@@ -1,3 +1,8 @@
+
+# Resources:
+# * https://hub.docker.com/r/linuxserver/unifi-controller
+#
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -55,8 +60,9 @@ spec:
           protocol: UDP
       securityContext: {}
       volumeMounts:
-        - mountPath: /config
-          name: unifi-config-pvc
+        - name: unifi-config-pvc
+          mountPath: /config
+
   restartPolicy: Never    # Let systemd handle this.
   volumes:
     - name: unifi-config-pvc
