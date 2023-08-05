@@ -4,9 +4,9 @@
 MAKEFLAGS += -s
 
 # General variables:
-KUBE_FILE = pod.yml
-PODMAN_POD_NAME = appionprotomo
-PODMAN_CONTAINER_NAME = appionprotomo
+KUBE_FILE = ./pods/unifi-controller.yml
+PODMAN_POD_NAME = unifi-controller
+PODMAN_CONTAINER_NAME = unifi-controller
 SERVICE_NAME := $$(systemd-escape $(CURDIR)/$(KUBE_FILE))
 
 # ---------------------------------------------------------
