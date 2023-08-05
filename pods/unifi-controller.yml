@@ -56,10 +56,9 @@ spec:
       securityContext: {}
       volumeMounts:
         - mountPath: /config
-          name: unifi-config
+          name: unifi-config-pvc
   restartPolicy: Never    # Let systemd handle this.
   volumes:
-    - name: unifi-config
-      hostPath:
-        path: /home/poddy/volumes/unifi-config
-        type: Directory
+    - name: unifi-config-pvc
+      persistentVolumeClaim:
+        claimName: unifi-config
